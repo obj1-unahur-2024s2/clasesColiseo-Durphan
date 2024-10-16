@@ -1,4 +1,14 @@
+import gladiadores.*
+import armas.*
+import armaduras.*
 describe "group of tests for pepita" {
 
- 
+ test "mirmillon ataca a otro" {
+  const espada = new ArmaDeFilo(longitud = 0.5, filo = 1)
+  const maza = new ArmaContundente(peso = 12)
+  const a = new Mirmillon(armaDeMano = espada, armadura = escudo, fuerzaPromedio = 12)
+  const b = new Mirmillon(armaDeMano = maza, armadura = casco, fuerzaPromedio = 20)
+  a.atacar(b)
+  assert.equals(100, b.vida())
+ }
 }
